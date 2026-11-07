@@ -1,0 +1,914 @@
+{
+ "ticker": "NVDA",
+ "cik": 1045810,
+ "nombre": "NVIDIA CORP",
+ "sector": "Semiconductors & Related Devices",
+ "sic": "3674",
+ "moneda_reportes": "USD",
+ "fecha": "2026-11-07",
+ "anual": [
+  {
+   "cierre": "2021-01-31",
+   "ingresos": 16675000000,
+   "utilidad_bruta": 10396000000,
+   "ebit": 4532000000,
+   "utilidad_neta": 4332000000,
+   "eps": 0.173,
+   "fcf": 5822000000,
+   "ebitda": 5630000000,
+   "deuda": 6963000000,
+   "caja": 11561000000,
+   "deuda_neta": -4598000000,
+   "patrimonio": 16893000000,
+   "activos": 28791000000,
+   "acciones": 25100000000.0,
+   "margen_bruto": 0.623448275862069,
+   "margen_operativo": 0.271784107946027,
+   "margen_fcf": 0.34914542728635684,
+   "nopat": 4452851893.853481,
+   "capital_invertido": 12295000000,
+   "deuda_neta_ebitda": -0.816696269982238,
+   "roe": 0.2564375776949032,
+   "roa": 0.1504636865687194,
+   "ajuste_split": 10.0,
+   "roic": 0.36216770181809527
+  },
+  {
+   "cierre": "2022-01-30",
+   "ingresos": 26914000000,
+   "utilidad_bruta": 17475000000,
+   "ebit": 10041000000,
+   "utilidad_neta": 9752000000,
+   "eps": 0.385,
+   "fcf": 8132000000,
+   "ebitda": 11215000000,
+   "deuda": 10946000000,
+   "caja": 21208000000,
+   "deuda_neta": -10262000000,
+   "patrimonio": 26612000000,
+   "activos": 44187000000,
+   "acciones": 25350000000.0,
+   "margen_bruto": 0.6492903321691313,
+   "margen_operativo": 0.3730772088875678,
+   "margen_fcf": 0.3021475811845136,
+   "nopat": 9850098782.81863,
+   "capital_invertido": 16350000000,
+   "deuda_neta_ebitda": -0.9150245207311636,
+   "roe": 0.3664512250112731,
+   "roa": 0.22069839545567702,
+   "ajuste_split": 10.0,
+   "roic": 0.6877359946111803
+  },
+  {
+   "cierre": "2023-01-29",
+   "ingresos": 26974000000,
+   "utilidad_bruta": 15356000000,
+   "ebit": 4224000000,
+   "utilidad_neta": 4368000000,
+   "eps": 0.17,
+   "fcf": 3808000000,
+   "ebitda": 5768000000,
+   "deuda": 10953000000,
+   "caja": 13296000000,
+   "deuda_neta": -2343000000,
+   "patrimonio": 22101000000,
+   "activos": 41182000000,
+   "acciones": 25070000000,
+   "margen_bruto": 0.5692889449099132,
+   "margen_operativo": 0.1565952398606065,
+   "margen_fcf": 0.14117298138948617,
+   "nopat": 3336960000.0,
+   "capital_invertido": 19758000000,
+   "deuda_neta_ebitda": -0.40620665742024964,
+   "roe": 0.19763811592235644,
+   "roa": 0.10606575688407557,
+   "roic": 0.18483217015619807
+  },
+  {
+   "cierre": "2024-01-28",
+   "ingresos": 60922000000,
+   "utilidad_bruta": 44301000000,
+   "ebit": 32972000000,
+   "utilidad_neta": 29760000000,
+   "eps": 1.19,
+   "fcf": 27021000000,
+   "ebitda": 34480000000,
+   "deuda": 9709000000,
+   "caja": 25984000000,
+   "deuda_neta": -16275000000,
+   "patrimonio": 42978000000,
+   "activos": 65728000000,
+   "acciones": 24940000000,
+   "margen_bruto": 0.7271757329043695,
+   "margen_operativo": 0.5412166376678376,
+   "margen_fcf": 0.4435343554052723,
+   "nopat": 29015515997.397835,
+   "capital_invertido": 26703000000,
+   "deuda_neta_ebitda": -0.4720127610208817,
+   "roe": 0.6924472986178976,
+   "roa": 0.4527750730282376,
+   "roic": 1.2490267535093018
+  },
+  {
+   "cierre": "2025-01-26",
+   "ingresos": 130497000000,
+   "utilidad_bruta": 97858000000,
+   "ebit": 81453000000,
+   "utilidad_neta": 72880000000,
+   "eps": 2.94,
+   "fcf": 60853000000,
+   "ebitda": 83317000000,
+   "deuda": 8463000000,
+   "caja": 43210000000,
+   "deuda_neta": -34747000000,
+   "patrimonio": 79327000000,
+   "activos": 111601000000,
+   "acciones": 24804000000,
+   "margen_bruto": 0.7498869705816992,
+   "margen_operativo": 0.6241752683969747,
+   "margen_fcf": 0.46631723334636044,
+   "nopat": 70648306952.60991,
+   "capital_invertido": 44580000000,
+   "deuda_neta_ebitda": -0.4170457409652292,
+   "roe": 0.9187288060811577,
+   "roa": 0.6530407433625147,
+   "roic": 1.9821923025857473
+  },
+  {
+   "cierre": "2026-01-25",
+   "ingresos": 215938000000,
+   "utilidad_bruta": 153463000000,
+   "ebit": 130387000000,
+   "utilidad_neta": 120067000000,
+   "eps": 4.9,
+   "fcf": 96676000000,
+   "ebitda": 133230000000,
+   "deuda": 8468000000,
+   "caja": 10605000000,
+   "deuda_neta": -2137000000,
+   "patrimonio": 157293000000,
+   "activos": 206803000000,
+   "acciones": 24514000000,
+   "margen_bruto": 0.7106808435754708,
+   "margen_operativo": 0.6038168363141272,
+   "margen_fcf": 0.44770258129648327,
+   "nopat": 110676393983.73982,
+   "capital_invertido": 155156000000,
+   "deuda_neta_ebitda": -0.016039930946483524,
+   "roe": 0.7633333969089534,
+   "roa": 0.5805863551302447,
+   "roic": 1.1082267992123584
+  }
+ ],
+ "resumen": {
+  "eps_fuente": "EPS diluido",
+  "anios": 6,
+  "ultimo_cierre": "2026-01-25",
+  "cagr_ingresos": 0.6689858183148778,
+  "cagr_ingresos_3a": 1.0004509499443963,
+  "cagr_eps": 0.9517760987840762,
+  "cagr_eps_3a": 2.0660722620765335,
+  "roic_mediana": 0.8979813969117694,
+  "roic_ultimo": 1.1082267992123584,
+  "roic_minimo": 0.18483217015619807,
+  "margen_bruto_ultimo": 0.7106808435754708,
+  "margen_bruto_cambio": 0.08723256771340182,
+  "margen_operativo_ultimo": 0.6038168363141272,
+  "margen_operativo_cambio": 0.3320327283681002,
+  "anios_caida_margen_operativo": 1,
+  "anios_fcf_positivo": 6,
+  "anios_con_fcf": 6,
+  "deuda_neta_ebitda": -0.016039930946483524,
+  "caja_neta": true,
+  "roe_ultimo": 0.7633333969089534,
+  "roa_ultimo": 0.5805863551302447,
+  "roe_cambio": 0.5068958192140502,
+  "roa_cambio": 0.4301226685615253
+ },
+ "knockouts_mecanicos": [],
+ "puntaje_calidad": {
+  "total": 100.0,
+  "partes": {
+   "roic": 30,
+   "crecimiento_ingresos": 20,
+   "crecimiento_eps": 15,
+   "margen_bruto": 10,
+   "tendencia_margen": 10,
+   "fcf": 10.0,
+   "balance": 5
+  },
+  "alertas": []
+ },
+ "fuentes_por_cifra": {
+  "ingresos": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Revenues"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Revenues"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Revenues"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Revenues"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Revenues"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Revenues"
+   }
+  },
+  "costo_ventas": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CostOfRevenue"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CostOfRevenue"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CostOfRevenue"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CostOfRevenue"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CostOfRevenue"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CostOfRevenue"
+   }
+  },
+  "utilidad_bruta": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:GrossProfit"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:GrossProfit"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:GrossProfit"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:GrossProfit"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:GrossProfit"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:GrossProfit"
+   }
+  },
+  "utilidad_operativa": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingIncomeLoss"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingIncomeLoss"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingIncomeLoss"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingIncomeLoss"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingIncomeLoss"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingIncomeLoss"
+   }
+  },
+  "utilidad_neta": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetIncomeLoss"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetIncomeLoss"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetIncomeLoss"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetIncomeLoss"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetIncomeLoss"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetIncomeLoss"
+   }
+  },
+  "eps_diluido": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:EarningsPerShareDiluted"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:EarningsPerShareDiluted"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:EarningsPerShareDiluted"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:EarningsPerShareDiluted"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:EarningsPerShareDiluted"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:EarningsPerShareDiluted"
+   }
+  },
+  "flujo_operativo": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+   }
+  },
+  "capex": {
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:PaymentsToAcquireProductiveAssets"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:PaymentsToAcquireProductiveAssets"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:PaymentsToAcquireProductiveAssets"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:PaymentsToAcquireProductiveAssets"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:PaymentsToAcquireProductiveAssets"
+   }
+  },
+  "dya": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:DepreciationDepletionAndAmortization"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:DepreciationDepletionAndAmortization"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:DepreciationDepletionAndAmortization"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:DepreciationDepletionAndAmortization"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:DepreciationDepletionAndAmortization"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:DepreciationDepletionAndAmortization"
+   }
+  },
+  "utilidad_antes_impuestos": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"
+   }
+  },
+  "impuestos": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeTaxExpenseBenefit"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeTaxExpenseBenefit"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeTaxExpenseBenefit"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeTaxExpenseBenefit"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeTaxExpenseBenefit"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:IncomeTaxExpenseBenefit"
+   }
+  },
+  "acciones_diluidas": {
+   "2021-01-31": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding"
+   }
+  },
+  "patrimonio": {
+   "2021-01-31": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:StockholdersEquity"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:StockholdersEquity"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:StockholdersEquity"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:StockholdersEquity"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:StockholdersEquity"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:StockholdersEquity"
+   }
+  },
+  "activos": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Assets"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Assets"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Assets"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Assets"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Assets"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:Assets"
+   }
+  },
+  "caja": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CashAndCashEquivalentsAtCarryingValue"
+   }
+  },
+  "inversiones_cp": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:MarketableSecuritiesCurrent"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:MarketableSecuritiesCurrent"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:MarketableSecuritiesCurrent"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:MarketableSecuritiesCurrent"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:MarketableSecuritiesCurrent"
+   }
+  },
+  "deuda_total_lp": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebt"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebt"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebt"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebt"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebt"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebt"
+   }
+  },
+  "deuda_lp_no_corriente": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtNoncurrent"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtNoncurrent"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtNoncurrent"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtNoncurrent"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtNoncurrent"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtNoncurrent"
+   }
+  },
+  "deuda_lp_corriente": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtCurrent"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtCurrent"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtCurrent"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtCurrent"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtCurrent"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:LongTermDebtCurrent"
+   }
+  },
+  "deuda_cp": {
+   "2021-01-31": {
+    "accn": "0001045810-21-000010",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CommercialPaper"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CommercialPaper"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CommercialPaper"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CommercialPaper"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:CommercialPaper"
+   }
+  }
+ },
+ "avisos": [],
+ "precio": {
+  "precio": 186.64,
+  "fecha": "2026-11-06",
+  "fuente": "Alpha Vantage (conector MCP)",
+  "verificado": true
+ },
+ "pe_ttm": 23.59544879898862,
+ "pe_mediana_5a": {
+  "valor": 61.71061069882499,
+  "fuente": "archivo del agente"
+ },
+ "ttm": {
+  "ingresos": {
+   "valor": 302970000000,
+   "hasta": "2026-07-26",
+   "accn": "0001045810-26-000075",
+   "etiqueta": "us-gaap:Revenues"
+  },
+  "utilidad_operativa": {
+   "valor": 197579000000,
+   "hasta": "2026-07-26",
+   "accn": "0001045810-26-000075",
+   "etiqueta": "us-gaap:OperatingIncomeLoss"
+  },
+  "eps_diluido": {
+   "valor": 7.91,
+   "hasta": "2026-07-26",
+   "accn": "0001045810-26-000075",
+   "etiqueta": "us-gaap:EarningsPerShareDiluted"
+  },
+  "flujo_operativo": {
+   "valor": 134360000000,
+   "hasta": "2026-07-26",
+   "accn": "0001045810-26-000075",
+   "etiqueta": "us-gaap:NetCashProvidedByUsedInOperatingActivities"
+  },
+  "capex": {
+   "valor": 7354000000,
+   "hasta": "2026-07-26",
+   "accn": "0001045810-26-000075",
+   "etiqueta": "us-gaap:PaymentsToAcquireProductiveAssets"
+  },
+  "fcf": 127006000000
+ },
+ "valoracion": {
+  "tasa_libre": {
+   "serie": "DGS10",
+   "fecha": "2026-11-05",
+   "valor": 0.0484,
+   "fuente": "FRED DGS10"
+  },
+  "tasa_descuento": 0.0984,
+  "fcf_base": 127006000000,
+  "fcf_base_origen": "FCF TTM hasta 2026-07-26 (10-K + 10-Q)",
+  "crecimiento_implicito_reverse_dcf": 0.18932224365214334,
+  "crecimientos_historicos": [
+   0.6689858183148778,
+   0.9517760987840762,
+   0.7540795865043977
+  ],
+  "crecimiento_conservador": 0.2,
+  "valor_justo_conservador": 197.50175905368468,
+  "precio_entrada": 167.87649519563197,
+  "semaforo": "AMARILLO"
+ },
+ "tramos": {
+  "techo": 3087,
+  "tramos": [
+   1235,
+   926,
+   926
+  ]
+ },
+ "verificacion_cruzada": {
+  "estado": "realizada",
+  "fuente": "Alpha Vantage INCOME_STATEMENT (conector MCP)",
+  "comparadas": 18,
+  "max_diferencia": 0.0,
+  "alertas": []
+ },
+ "llamadas": {
+  "red": 0,
+  "cache": 4
+ }
+}

@@ -1,0 +1,51 @@
+# Universo del screener: calidad global sin riesgo desproporcionado.
+#
+# 1) Empresas que reportan 10-K a la SEC con float público ≥ min_float_usd. Se obtiene de EDGAR
+#    (endpoint frames de dei:EntityPublicFloat) con ~4 requests en total; equivale de hecho a las grandes
+#    capitalizaciones de EE. UU. (S&P 500 + Nasdaq 100 y similares).
+# 2) Emisores extranjeros que reportan 20-F/40-F (no publican float en XBRL): lista curada abajo.
+#    Solo grandes, líquidos, listados en NYSE/Nasdaq y auditados por firmas inspeccionadas por el PCAOB.
+# 3) Ideas manuales: ideas.md (siempre se evalúan, aunque no cumplan el tamaño).
+
+min_float_usd: 10000000000
+
+# Periodos de EDGAR frames a consultar (instantáneos). Se toma el más reciente por empresa.
+# Actualizar al inicio de cada año: los dos trimestres más recientes con datos completos + los dos anteriores.
+periodos_float: [CY2024Q4I, CY2025Q1I, CY2025Q2I, CY2025Q3I]
+
+bolsas_permitidas: [NYSE, Nasdaq]
+
+# SIC 6000-6799 (bancos, aseguradoras, REITs): ROIC/EBITDA no aplican. El screener los excluye;
+# si interesa uno, se agrega a ideas.md y se analiza a mano con /analizar.
+excluir_sic: [[6000, 6799]]
+
+extranjeros:
+  # Europa
+  - ASML    # Países Bajos, litografía de semiconductores
+  - SAP     # Alemania, software empresarial
+  - NVO     # Dinamarca, farmacéutica
+  - AZN     # Reino Unido, farmacéutica
+  - SNY     # Francia, farmacéutica
+  - UL      # Reino Unido, consumo
+  - DEO     # Reino Unido, bebidas
+  - RELX    # Reino Unido, información
+  - FER     # España/Países Bajos, infraestructura
+  - ARM     # Reino Unido, diseño de chips
+  - SPOT    # Suecia/Luxemburgo, streaming
+  - CRH     # Irlanda, materiales
+  # Asia
+  - TSM     # Taiwán, fundición de semiconductores
+  - SONY    # Japón, entretenimiento y electrónica
+  - TM      # Japón, autos
+  - HDB     # India, banco (financiera: se analiza a mano)
+  - INFY    # India, servicios TI
+  - SE      # Singapur, e-commerce
+  # Latinoamérica
+  - NU      # Brasil, fintech
+  - FMX     # México, consumo
+  - CPNG    # Corea (reporta 10-K, ya cubierto si cumple float)
+  # Canadá
+  - SHOP    # e-commerce
+  - CNI     # ferrocarril
+  - CP      # ferrocarril
+  - TRI     # información

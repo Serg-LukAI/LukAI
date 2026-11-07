@@ -1,0 +1,35 @@
+# Umbrales del screener. Derivados de rubrica/Rubrica_Quality_Compounding_2026.md y del checklist
+# del satélite (pestaña Plan, sección 6). Cambiarlos solo en la revisión trimestral, por escrito.
+
+knockouts:
+  anios_minimos: 4              # años fiscales con datos en EDGAR
+  cagr_ingresos_3a_min: 0.0     # ingresos en caída sostenida → trampa de valor
+  cagr_eps_3a_min: 0.0          # EPS en caída sostenida
+  anios_caida_margen_max: 3     # margen operativo cayendo 3 años seguidos
+  wacc_proxy: 0.09              # ROIC mediano por debajo de esto = destruye valor (aprox. WACC)
+  deuda_neta_ebitda_max: 3.5
+
+puntaje:                        # para ORDENAR candidatos, no para decidir
+  roic_ideal: 0.15
+  roic_aceptable: 0.12          # checklist: ROIC sostenido > 12%
+  crec_ideal: 0.12
+  crec_aceptable: 0.08
+  margen_bruto_ideal: 0.50
+  margen_bruto_aceptable: 0.30
+
+screener:
+  top: 10
+  puntaje_minimo: 50
+
+valoracion:
+  margen_seguridad: 0.15        # precio de entrada = valor justo × (1 − 15%), como en NVDA
+  prima_mercado: 0.05           # CAPM: tasa libre (FRED DGS10) + beta × prima
+  crecimiento_terminal: 0.03
+  recorte_crecimiento: 0.25     # crecimiento conservador = menor histórico × (1 − 25%)
+  tope_crecimiento: 0.20
+
+cartera:
+  techo_posicion: 0.05
+  tramos: [0.40, 0.30, 0.30]
+  dias_entre_tramos: 14
+  max_watchlist: 8
