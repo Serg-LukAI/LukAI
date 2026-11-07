@@ -1,0 +1,27 @@
+{
+ "Cualitativo": {
+  "F6": 5, "G6": "Plataforma completa (GPU+CUDA+redes+sistemas); 'data center scale AI infrastructure company'. Margen bruto 75.0% Q2 FY27: no es commodity. Fuente: 10-K FY26 Item 1 (accn 0001045810-26-000021); 10-Q Q2 FY27 (0001045810-26-000075).",
+  "F7": 5, "G7": "Ecosistema CUDA desde 2006 que corre en todas sus GPU + cientos de librerías/SDK: alto coste de cambio. Riesgo: el propio 10-K lista como competidores a AMD, Huawei, Intel y chips propios de Alphabet, Amazon, Microsoft. Fuente: 10-K FY26 Item 1 y 1A (0001045810-26-000021).",
+  "F8": 5, "G8": "Margen bruto 75.0% Q2 FY27 vs 72.4% Q2 FY26 con ingresos +106% a/a (96,221 M): sube volumen sin ceder margen. FY26 71.1% (incluye cargo H20 de 4.5 B). Fuente: 10-Q Q2 FY27 MD&A (0001045810-26-000075); 10-K FY26 MD&A.",
+  "F9": 5, "G9": "Fundador-CEO Jensen Huang posee 870.6 M acciones (3.58%) al 23/03/2026; >90% de su paga objetivo es variable y 100% de su equity son PSU; clawback y guías de tenencia. Ojo: hijos empleados (~2.6 M USD en total) y asignación de capital a participaciones en clientes. Fuente: DEF 14A 12/05/2026 (0001045810-26-000036).",
+  "F10": 3, "G10": "Pendiente de Sergio: evalúa a Sergio, no a la empresa.",
+  "F14": 3, "G14": "Estable, no claramente creciente: el foso se amplía en sistemas/redes, pero los hiperescaladores diseñan chips propios, Huawei compite en China y los controles de exportación cerraron mercado (cargo H20 4.5 B en Q1 FY26; ~60 M de ingresos H20 con licencia). Fuente: 10-K FY26 Item 1A (0001045810-26-000021).",
+  "F15": 5, "G15": "Compromisos de suministro de 279 B al 26/07/2026 (vs 119 B el trimestre previo) 'para la demanda de los próximos años'; I+D FY26 18,497 M (+43%). Matiz: parte de la caja va a recompras (19.7 B en Q2) y a participaciones en clientes (47.9 B no cotizadas). Fuente: 10-Q Q2 FY27 Nota 10 (0001045810-26-000075); 10-K FY26 MD&A.",
+  "F16": 5, "G16": "Cómputo acelerado/IA como tendencia secular; ingresos Q2 FY27 +106% a/a; automotriz FY26 +39%. Fuente: 10-Q Q2 FY27 y 10-K FY26 MD&A.",
+  "F17": 3, "G17": "Amenaza presente pero gestionable: chips propios de clientes (Alphabet, Amazon, Microsoft), controles de exportación cambiantes y concentración (3 clientes directos 16/15/13% en 1S FY27). NVIDIA lidera el cambio, por eso no es 1. Fuente: 10-K FY26 Item 1A; 10-Q Q2 FY27 Nota 7.",
+  "F18": 3, "G18": "Hay extensiones reales (automotriz +39% FY26, DGX Spark, redes, nube IA), pero con un reverse DCF que ya descuenta FCF +18.9%/año (ficha 2026-11-07) es dudoso que el mercado no las esté pagando. Fuente: 10-K FY26 MD&A; analisis/NVDA/2026-11-07-ficha.json.",
+  "B29": "Pendiente: 3 líneas de Sergio",
+  "B31": "1) Concentración y ciclo de capex: 3 clientes directos = 16%, 15% y 13% de ingresos en 1S FY27 y 5 clientes = 70% de cuentas por cobrar (10-Q Q2 FY27); un recorte de capex de hiperescaladores pega directo. 2) Compromisos fijos: 366 B de compromisos futuros (279 B de suministro) al 26/07/2026; si la demanda cae, vienen cargos de inventario como el de H20 (4.5 B, Q1 FY26). 3) Financiación de clientes: participaciones en desarrolladores de IA (47.9 B no cotizadas, +25 B comprometidos), garantías sobre arrendamientos de OpenAI y plazos de pago de hasta 1 año: la demanda podría depender en parte del balance de NVIDIA. Además: controles de exportación a China y chips propios de los clientes (10-K FY26 1A).",
+  "B33": "Vender (tesis rota) si: a) margen bruto trimestral < 70% dos trimestres seguidos sin cargo puntual que lo explique; b) ingresos de Data Center caen a/a; c) un hiperescalador top declara que migra la mayoría de su entrenamiento/inferencia a chips propios; d) cuentas por cobrar o inventario crecen claramente más rápido que los ingresos, o crecen los cargos por compromisos de compra; e) la otra renta (ganancias de inversiones) pasa a sostener el crecimiento del EPS. O por las reglas del Plan: posición > 8% o mejor alternativa.",
+  "B35": "Reporte Q3 FY27 el 17/11/2026 (trimestre cerrado el 25/10/2026; comunicado de NVIDIA del 28/10/2026): vigilar margen bruto, guía de Q4 y cuentas por cobrar. Opciones: redes, sistemas a escala de rack, automotriz/robótica, IA soberana, posibles licencias de exportación a China. Estimado FY2028E de Alpha Vantage: EPS 15.91 e ingresos 692,206 M (EARNINGS_ESTIMATES, consultado 2026-11-07)."
+ },
+ "Rúbrica": {
+  "D10": "NO",
+  "F10": "NO (vigilar). GAAP sin ajustes non-GAAP en 10-K/10-Q. Pero: otros ingresos 24,140 M = 17% del resultado antes de impuestos en 1S FY27 (incluye 7,504 M de ganancias no realizadas en participaciones no cotizadas): el EPS GAAP está inflado por partidas no operativas; el FCF TTM (127,006 M) sí es operativo. Financiación a clientes (participaciones, garantías a OpenAI, plazos hasta 1 año). Deuda: 33,366 M a tasa fija (3.3-5.7%), 25 B emitidos en jun-2026; vencimientos 1,000 M 2026, 4,750 M 2028, 3,500 M 2029; papel comercial 0 de 25 B. Fuente: 10-Q Q2 FY27 (0001045810-26-000075) Notas 7, 9 y 10."
+ },
+ "Comparables": {
+  "C5": 0.472, "D5": 0.6589, "E5": 0.5655,
+  "C13": 58.92, "D13": 25.18, "E13": 42.05,
+  "F13": "Forward = año fiscal en curso de Alpha Vantage EARNINGS_ESTIMATES (07/11/2026): AMD FY2026E (dic-26) EPS 7.6207, ingresos 50,989 M; AVGO FY2026E (oct-26, aún sin reportar) EPS 11.6657, ingresos 105,985 M. Crecimiento sobre el último 10-K (AMD 34,639 M a 27/12/2025; AVGO 63,887 M a 02/11/2025). P/E con precios AV del 06/11/2026 (449.04 y 293.69). Estimados AV posiblemente ajustados (non-GAAP)."
+ }
+}

@@ -169,8 +169,8 @@
    "fcf": 96676000000,
    "ebitda": 133230000000,
    "deuda": 8468000000,
-   "caja": 10605000000,
-   "deuda_neta": -2137000000,
+   "caja": 49670000000,
+   "deuda_neta": -41202000000,
    "patrimonio": 157293000000,
    "activos": 206803000000,
    "arrendamientos": 2944000000,
@@ -183,11 +183,11 @@
    "margen_operativo": 0.6038168363141272,
    "margen_fcf": 0.44770258129648327,
    "nopat": 110676393983.73982,
-   "capital_invertido": 158100000000,
-   "deuda_neta_ebitda": -0.016039930946483524,
+   "capital_invertido": 119035000000,
+   "deuda_neta_ebitda": -0.3092546723710876,
    "roe": 0.7633333969089534,
    "roa": 0.5805863551302447,
-   "roic": 1.0824785339287077
+   "roic": 1.3381097312780625
   }
  ],
  "resumen": {
@@ -198,8 +198,8 @@
   "cagr_ingresos_3a": 1.0004509499443963,
   "cagr_eps": 0.9517760987840762,
   "cagr_eps_3a": 2.0660722620765335,
-  "roic_mediana": 0.8664860486324613,
-  "roic_ultimo": 1.0824785339287077,
+  "roic_mediana": 0.9187810450031693,
+  "roic_ultimo": 1.3381097312780625,
   "roic_minimo": 0.17530193585668882,
   "margen_bruto_ultimo": 0.7106808435754708,
   "margen_bruto_cambio": 0.08723256771340182,
@@ -208,7 +208,7 @@
   "anios_caida_margen_operativo": 1,
   "anios_fcf_positivo": 6,
   "anios_con_fcf": 6,
-  "deuda_neta_ebitda": -0.016039930946483524,
+  "deuda_neta_ebitda": -0.3092546723710876,
   "caja_neta": true,
   "roe_ultimo": 0.7633333969089534,
   "roa_ultimo": 0.5805863551302447,
@@ -730,6 +730,11 @@
     "accn": "0001045810-25-000023",
     "forma": "10-K",
     "etiqueta": "us-gaap:MarketableSecuritiesCurrent"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000075",
+    "forma": "10-Q",
+    "etiqueta": "us-gaap:DebtSecuritiesCurrent"
    }
   },
   "deuda_total_lp": {
@@ -1007,15 +1012,20 @@
   "tasa_descuento": 0.0984,
   "fcf_base": 127006000000,
   "fcf_base_origen": "FCF TTM hasta 2026-07-26 (10-K + 10-Q)",
-  "crecimiento_implicito_reverse_dcf": 0.18932224365214334,
+  "deuda_neta_base": {
+   "valor": -23220000000,
+   "hasta": "2026-07-26",
+   "accn": "0001045810-26-000075"
+  },
+  "crecimiento_implicito_reverse_dcf": 0.18845248523421299,
   "crecimientos_historicos": [
    0.6689858183148778,
    0.9517760987840762,
    0.7540795865043977
   ],
   "crecimiento_conservador": 0.2,
-  "valor_justo_conservador": 197.50175905368468,
-  "precio_entrada": 167.87649519563197,
+  "valor_justo_conservador": 198.36179821498027,
+  "precio_entrada": 168.60752848273322,
   "semaforo": "AMARILLO"
  },
  "tramos": {

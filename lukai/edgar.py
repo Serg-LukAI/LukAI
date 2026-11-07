@@ -10,7 +10,7 @@ from datetime import date
 from . import red
 
 BASE = "https://data.sec.gov"
-VERSION_SERIES = 3  # subir si cambia la extracción, para invalidar los resúmenes guardados
+VERSION_SERIES = 5  # subir si cambia la extracción, para invalidar los resúmenes guardados
 FORMAS_ANUALES = {"10-K", "10-K/A", "20-F", "20-F/A", "40-F", "40-F/A", "10-KT"}
 
 # Concepto -> etiquetas XBRL en orden de prioridad (US-GAAP e IFRS).
@@ -55,7 +55,7 @@ CONCEPTOS: dict[str, tuple[str, list[str]]] = {
         "CashAndCashEquivalentsAtCarryingValue", "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
         "CashAndCashEquivalents"]),
     "inversiones_cp": ("saldo", ["MarketableSecuritiesCurrent", "ShortTermInvestments",
-                                 "AvailableForSaleSecuritiesDebtSecuritiesCurrent"]),
+                                 "AvailableForSaleSecuritiesDebtSecuritiesCurrent", "DebtSecuritiesCurrent"]),
     "deuda_total_lp": ("saldo", ["LongTermDebt", "Borrowings"]),
     "deuda_lp_no_corriente": ("saldo", ["LongTermDebtNoncurrent", "LongTermDebtAndCapitalLeaseObligations",
                                         "LongtermBorrowings", "NoncurrentPortionOfNoncurrentBorrowings"]),
@@ -161,13 +161,17 @@ def _serie_etiqueta(facts: dict, etiqueta: str, tipo: str) -> tuple[dict[str, di
         unidad = max(nodo["units"], key=lambda u: len(nodo["units"][u]))
         serie: dict[str, dict] = {}
         for x in nodo["units"][unidad]:
-            if x.get("form") not in FORMAS_ANUALES:
+            anual = x.get("form") in FORMAS_ANUALES
+            # Saldos: si el 10-K no etiqueta un saldo de cierre que sí aparece como comparativo en un 10-Q,
+            # se acepta el del 10-Q (mismo instante). Los flujos anuales solo salen de formularios anuales.
+            if not anual and not (tipo == "saldo" and x.get("form") in FORMAS_TRIMESTRALES):
                 continue
             if tipo == "flujo":
                 if "start" not in x or not 330 <= _dias(x["start"], x["end"]) <= 400:
                     continue
             prev = serie.get(x["end"])
-            if prev is None or x["filed"] > prev["presentado"]:
+            prev_anual = prev is not None and prev["forma"] in FORMAS_ANUALES
+            if prev is None or (anual and not prev_anual) or (anual == prev_anual and x["filed"] > prev["presentado"]):
                 serie[x["end"]] = {"valor": x["val"], "accn": x["accn"], "forma": x["form"],
                                    "presentado": x["filed"], "etiqueta": f"{tax}:{etiqueta}"}
         if serie:
@@ -218,8 +222,10 @@ def ultimo_saldo(facts_json: dict, concepto: str) -> dict | None:
     if tipo != "saldo":
         return None
     facts = facts_json.get("facts", {})
-    mejor = None
-    for et in etiquetas:
+    # Se toma la fecha MÁS RECIENTE entre todas las etiquetas (las empresas cambian de etiqueta: NVIDIA pasó de
+    # MarketableSecuritiesCurrent a DebtSecuritiesCurrent); a igual fecha manda la prioridad de la lista.
+    mejor, clave_mejor = None, None
+    for prioridad, et in enumerate(etiquetas):
         for tax in ("us-gaap", "ifrs-full"):
             nodo = facts.get(tax, {}).get(et)
             if not nodo:
@@ -227,12 +233,40 @@ def ultimo_saldo(facts_json: dict, concepto: str) -> dict | None:
             unidad = max(nodo["units"], key=lambda u: len(nodo["units"][u]))
             for x in nodo["units"][unidad]:
                 if x.get("form") in FORMAS_ANUALES | FORMAS_TRIMESTRALES and "start" not in x:
-                    if mejor is None or (x["end"], x["filed"]) > (mejor["hasta"], mejor["presentado"]):
+                    clave = (x["end"], -prioridad, x["filed"])
+                    if clave_mejor is None or clave > clave_mejor:
+                        clave_mejor = clave
                         mejor = {"valor": x["val"], "hasta": x["end"], "presentado": x["filed"], "accn": x["accn"],
                                  "etiqueta": f"{tax}:{et}"}
-        if mejor:
-            return mejor  # respeta la prioridad de etiquetas
-    return None
+    return mejor
+
+
+def balance_reciente(facts_json: dict) -> dict:
+    """Deuda financiera y caja del último balance publicado (10-Q o 10-K), con su fuente.
+
+    La deuda puede cambiar mucho entre 10-K (p. ej. NVIDIA emitió 25 B en jun-2026): para valorar hoy se usa
+    el último balance, no el del cierre fiscal. Cada componente debe tener la misma fecha que la caja.
+    """
+    caja = ultimo_saldo(facts_json, "caja")
+    if not caja:
+        return {}
+    fecha = caja["hasta"]
+    def misma_fecha(concepto):  # noqa: E306
+        s = ultimo_saldo(facts_json, concepto)
+        return s if s and s["hasta"] == fecha else None
+    inv = misma_fecha("inversiones_cp")
+    total = misma_fecha("deuda_total_lp")
+    if total:
+        deuda = total["valor"]
+    else:
+        partes = [misma_fecha("deuda_lp_no_corriente"), misma_fecha("deuda_lp_corriente")]
+        deuda = sum(x["valor"] for x in partes if x) if any(partes) else None
+    cp = misma_fecha("deuda_cp")
+    if deuda is not None and cp:
+        deuda += cp["valor"]
+    efectivo = caja["valor"] + (inv["valor"] if inv else 0)
+    return {"hasta": fecha, "accn": caja["accn"], "deuda": deuda, "caja": efectivo,
+            "deuda_neta": None if deuda is None else deuda - efectivo}
 
 
 def series_anuales(facts_json: dict, anios: int = 6) -> dict:

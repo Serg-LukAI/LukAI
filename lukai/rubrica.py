@@ -62,10 +62,11 @@ def columna_ttm(hechos: dict, series: dict, ult: dict) -> tuple[dict, str]:
         v[clave] = s["valor"] if s else ult.get(clave)
     if v.get("arrendamientos") is None:
         v["arrendamientos"] = ult.get("arrendamientos")
-    inv = edgar.ultimo_saldo(hechos, "inversiones_cp")
-    if v.get("caja") is not None and inv and inv["hasta"] == (edgar.ultimo_saldo(hechos, "caja") or {}).get("hasta"):
-        v["caja"] += inv["valor"]
-    v["deuda"] = ult["deuda"]  # la deuda financiera trimestral viene muy fragmentada en XBRL: se usa la del 10-K
+    # Deuda financiera y caja (+ valores negociables) del último balance, misma fecha (lección NVDA: emisión de
+    # 25 B en jun-2026 que el 10-K no recogía).
+    b = edgar.balance_reciente(hechos)
+    v["caja"] = b.get("caja", ult["caja"])
+    v["deuda"] = b["deuda"] if b.get("deuda") is not None else ult["deuda"]
     v["tasa_impuesto"] = ult["tasa_impuesto"]
     return v, hasta
 
@@ -111,7 +112,8 @@ def valores_datos(ticker: str, precio: float | None, wacc: float | None, precios
             10: "Ajustado por splits a la base actual.",
             11: "TTM = nivel del último año, no suma de trimestres.",
             14: "FCF = OCF − |capex| (GAAP). Si hay float/no recurrentes, reemplazar por el ajustado citado.",
-            16: "SOLO deuda financiera (sin arrendamientos operativos). TTM = último 10-K.",
+            16: "SOLO deuda financiera (sin arrendamientos operativos). TTM = último balance (10-Q).",
+            15: "Caja + valores negociables de corto plazo. TTM = último balance (10-Q).",
             19: "Impuestos / utilidad antes de impuestos (21% si no es razonable).",
             21: "Pasivo por arrendamiento operativo: fuera de DN/EBITDA, dentro del capital invertido del ROIC.",
         }.get(fila, "")
@@ -150,6 +152,8 @@ def valores_datos(ticker: str, precio: float | None, wacc: float | None, precios
             else:
                 datos[f"G{fila}"] = datos[f"F{fila}"]
         datos["G4"] = f"NTM {ntm.get('etiqueta', 'E')}"
+        datos["H12"] = ("NTM (G12–G14) = SUPUESTO: margen de OCF/capex/FCF del TTM × ingresos NTM estimados. "
+                        "No es una cifra reportada ni un consenso de FCF.")
     else:
         brechas.append("Datos!G5:G21 (NTM: pasar --ingresos-ntm y --eps-ntm citados)")
     return {"Datos": datos}, brechas

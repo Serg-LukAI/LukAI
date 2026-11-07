@@ -152,7 +152,10 @@ def construir(ticker: str, valor_cartera: float | None = None, fx: float = 1.0, 
     if p and fcf0 and fcf0 > 0 and ult["acciones"]:
         acciones_adr = ult["acciones"] / ratio_adr
         fcf_usd = fcf0 * fx
-        deuda_neta_usd = (ult["deuda_neta"] or 0) * fx
+        bal = edgar.balance_reciente(hechos)
+        dn = bal.get("deuda_neta") if bal.get("deuda_neta") is not None else ult["deuda_neta"]
+        val["deuda_neta_base"] = {"valor": dn, "hasta": bal.get("hasta", ult["cierre"]), "accn": bal.get("accn")}
+        deuda_neta_usd = (dn or 0) * fx
         ve = p["precio"] * acciones_adr + deuda_neta_usd
         crec_hist = [res["cagr_ingresos"], res["cagr_eps"],
                      metricas.cagr(filas[0]["fcf"], ult["fcf"], len(filas) - 1)]
