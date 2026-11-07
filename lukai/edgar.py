@@ -10,7 +10,7 @@ from datetime import date
 from . import red
 
 BASE = "https://data.sec.gov"
-VERSION_SERIES = 2  # subir si cambia la extracción, para invalidar los resúmenes guardados
+VERSION_SERIES = 3  # subir si cambia la extracción, para invalidar los resúmenes guardados
 FORMAS_ANUALES = {"10-K", "10-K/A", "20-F", "20-F/A", "40-F", "40-F/A", "10-KT"}
 
 # Concepto -> etiquetas XBRL en orden de prioridad (US-GAAP e IFRS).
@@ -62,6 +62,11 @@ CONCEPTOS: dict[str, tuple[str, list[str]]] = {
     "deuda_lp_corriente": ("saldo", ["LongTermDebtCurrent", "CurrentPortionOfLongtermBorrowings",
                                      "CurrentBorrowingsAndCurrentPortionOfNoncurrentBorrowings"]),
     "deuda_cp": ("saldo", ["ShortTermBorrowings", "CommercialPaper", "ShorttermBorrowings"]),
+    # Arrendamientos operativos (ASC 842 / IFRS 16): NO son deuda financiera, pero SÍ capital invertido del ROIC
+    # (lección CMG de la skill lukai-equity-analyst: ~96% de ROIC sin leases vs. ~22% con leases).
+    "arrendamientos": ("saldo", ["OperatingLeaseLiability", "LeaseLiabilities"]),
+    "arrendamientos_no_corriente": ("saldo", ["OperatingLeaseLiabilityNoncurrent", "NoncurrentLeaseLiabilities"]),
+    "arrendamientos_corriente": ("saldo", ["OperatingLeaseLiabilityCurrent", "CurrentLeaseLiabilities"]),
 }
 
 
@@ -205,6 +210,29 @@ def ttm(facts_json: dict, concepto: str, cierre_fy: str, valor_fy: float | None)
             return {"valor": valor_fy + ytd["val"] - prev["val"], "hasta": ytd["end"], "accn": ytd["accn"],
                     "etiqueta": f"{tax}:{et}"}
     return {"valor": valor_fy, "hasta": cierre_fy, "accn": None, "etiqueta": "año fiscal (sin 10-Q posterior)"}
+
+
+def ultimo_saldo(facts_json: dict, concepto: str) -> dict | None:
+    """Saldo más reciente (10-Q o 10-K) de un concepto de balance: la columna TTM usa el último trimestre."""
+    tipo, etiquetas = CONCEPTOS[concepto]
+    if tipo != "saldo":
+        return None
+    facts = facts_json.get("facts", {})
+    mejor = None
+    for et in etiquetas:
+        for tax in ("us-gaap", "ifrs-full"):
+            nodo = facts.get(tax, {}).get(et)
+            if not nodo:
+                continue
+            unidad = max(nodo["units"], key=lambda u: len(nodo["units"][u]))
+            for x in nodo["units"][unidad]:
+                if x.get("form") in FORMAS_ANUALES | FORMAS_TRIMESTRALES and "start" not in x:
+                    if mejor is None or (x["end"], x["filed"]) > (mejor["hasta"], mejor["presentado"]):
+                        mejor = {"valor": x["val"], "hasta": x["end"], "presentado": x["filed"], "accn": x["accn"],
+                                 "etiqueta": f"{tax}:{et}"}
+        if mejor:
+            return mejor  # respeta la prioridad de etiquetas
+    return None
 
 
 def series_anuales(facts_json: dict, anios: int = 6) -> dict:

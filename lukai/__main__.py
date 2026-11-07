@@ -44,6 +44,21 @@ def main(argv: list[str] | None = None) -> int:
     f.add_argument("--historico", help="Precios mensuales: CSV fecha,precio o respuesta de TIME_SERIES_MONTHLY_ADJUSTED")
     f.add_argument("--av-income", help="Archivo con la respuesta de Alpha Vantage INCOME_STATEMENT (verificación cruzada)")
 
+    rb = sp.add_parser("rubrica", help="Genera y llena el Excel de la skill lukai-equity-analyst desde EDGAR")
+    rb.add_argument("ticker")
+    rb.add_argument("--precio", type=float)
+    rb.add_argument("--historico", help="Precios mensuales ajustados (CSV o JSON de Alpha Vantage) para la fila 20")
+    rb.add_argument("--ingresos-ntm", type=float, help="Ingresos NTM estimados en USD (no en millones)")
+    rb.add_argument("--eps-ntm", type=float)
+    rb.add_argument("--etiqueta-ntm", default="E", help="Texto del encabezado NTM, p. ej. '2027E (AV EARNINGS_ESTIMATES)'")
+    rb.add_argument("--peers", help="Dos competidores, separados por coma")
+    rb.add_argument("--precios-peers", help="Precios de los competidores: T1=123.4,T2=56.7")
+    rb.add_argument("--out", help="Ruta del .xlsx (por defecto analisis/<TICKER>/<fecha>-rubrica.xlsx)")
+
+    cp_ = sp.add_parser("completar", help="Escribe el JSON del agente en el libro y devuelve los resultados")
+    cp_.add_argument("xlsx")
+    cp_.add_argument("json")
+
     p = sp.add_parser("precio")
     p.add_argument("tickers", nargs="+")
 
@@ -72,6 +87,30 @@ def main(argv: list[str] | None = None) -> int:
         r = ficha.construir(a.ticker, a.cartera, a.fx, a.adr, a.fcf, a.refrescar, pm, hist, av_income=a.av_income)
         print(ficha.resumen_texto(r))
         print(f"\nFicha completa: analisis/{r['ticker']}/{r['fecha']}-ficha.json")
+    elif a.cmd == "rubrica":
+        from datetime import date
+
+        from . import ficha, rubrica
+        from .screener import criterios
+        t = a.ticker.upper()
+        salida = a.out or str(red.RAIZ / "analisis" / t / f"{date.today().isoformat()}-rubrica.xlsx")
+        (red.RAIZ / "analisis" / t).mkdir(parents=True, exist_ok=True)
+        hist = dict(ficha.cargar_historico(a.historico)) if a.historico else {}
+        rf = _seguro(fred.tasa_libre_riesgo)
+        wacc = None if "error" in rf else valuacion.wacc(rf["valor"], prima_mercado=criterios()["valoracion"]["prima_mercado"])
+        ntm = None
+        if a.ingresos_ntm:
+            ntm = {"ingresos": a.ingresos_ntm, "eps": a.eps_ntm, "etiqueta": a.etiqueta_ntm}
+        pp = {}
+        if a.precios_peers:
+            for par in a.precios_peers.split(","):
+                k, v = par.split("=")
+                pp[k.strip().upper()] = float(v)
+        _imprimir(rubrica.generar(t, salida, a.precio, wacc, hist, ntm,
+                                  a.peers.split(",") if a.peers else None, pp))
+    elif a.cmd == "completar":
+        from . import rubrica
+        _imprimir(rubrica.completar(a.xlsx, a.json))
     elif a.cmd == "precio":
         _imprimir({t: _seguro(precios.precio, t) for t in a.tickers})
     elif a.cmd == "semaforo":

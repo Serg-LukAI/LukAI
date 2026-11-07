@@ -5,3 +5,5 @@ Una línea por lección: `- AAAA-MM-DD [TICKER] lección`. Máx. 3 líneas por a
 - 2026-11-06 [NVDA] yfinance info["forwardEps"] suele ser el estimado +1y (2 anos fuera), no NTM; usa t.earnings_estimate filas 0y/+1y y mezcla conservador. "Diluted EPS" puede venir 0.0 -> calcula NI/acciones.
 - 2026-11-06 [NVDA] TTM de acciones: NO sumes los 4 trimestres de "Diluted Average Shares" (da ~4x); usa el nivel del ultimo trimestre.
 
+- 2026-11-07 [NVDA] Con años fiscales desfasados (FY termina en enero), Alpha Vantage EARNINGS_ESTIMATES trae el FY en curso y el siguiente; NTM conservador = FY en curso. Anota cuál usaste en la etiqueta NTM.
+- 2026-11-07 [SKILL] build_rubrica --blank dejaba Cualitativo en 5/5 y comparables de ejemplo: corregido en v1.3. Un criterio sin evaluar ahora suma 0, no el máximo.

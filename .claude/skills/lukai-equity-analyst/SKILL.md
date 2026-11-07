@@ -11,7 +11,12 @@ description: >-
 
 # LukAI — Analista bursátil (Quality & Compounding)
 
-**Versión 1.2** · Cambios v1.2: ROIC con capital invertido que incluye arrendamientos operativos (fila 21 nueva;
+**Versión 1.3** · Cambios v1.3: integrada al repo LukAI. Los datos cuantitativos salen de **SEC EDGAR** vía
+`python -m lukai rubrica` (fuente oficial, con accession number por fila y verificación cruzada con Alpha Vantage);
+yfinance queda solo como respaldo marcado para estimaciones. `--blank` ya no deja ejemplos en Comparables ni
+puntajes 5/5 en Cualitativo (un criterio sin evaluar ahora suma 0, no el máximo). Resultados leídos con
+recálculo automático si hay LibreOffice.
+· v1.2: ROIC con capital invertido que incluye arrendamientos operativos (fila 21 nueva;
 ~22% real vs. ~96% irreal), guardia anti-"fórmula" en celdas de nota que empiezan por "=", y matiz de momentum
 en el titular de la clasificación ("(con desaceleración reciente — vigilar)") sin alterar el puntaje.
 · v1.1: leases fuera de la deuda financiera, etiquetas de año dinámicas, valoración con ancla de múltiplo
@@ -30,20 +35,23 @@ marca claramente lo que es estimación vs. dato reportado. Nunca inventes cifras
 "Analiza NVDA", "pásame a Costco por la rúbrica", "¿está cara MELI?", "evalúa Visa para largo plazo".
 
 ## Flujo de trabajo (en el entorno de código, no en el chat)
-> **Fuente de datos en ESTE entorno:** no hay clave de FMP ni LibreOffice. Usa **yfinance** como fuente
-> primaria y verifica por web solo lo crítico. El recálculo final lo hace **Excel al abrir** el archivo;
-> por eso calcula los resultados de la rúbrica **en Python** para poder reportarlos. Ver "Lecciones de
-> ejecución" al final con la receta exacta que ya funcionó.
+> **Fuente de datos (repo LukAI):** el cuantitativo lo llena `python -m lukai rubrica` desde **SEC EDGAR**
+> (10-K/10-Q/20-F), con splits, TTM, deuda financiera vs. arrendamientos y fuente por fila ya resueltos.
+> Precio, histórico y estimaciones salen del **conector Alpha Vantage** (3–4 llamadas). yfinance solo como
+> respaldo de estimaciones, marcado "no oficial". Reglas generales en `CLAUDE.md` del repo.
 
-1. **Resolver** ticker ↔ nombre (yfinance `Ticker.info`; FMP `search`/`profile` si hubiera clave).
+1. **Resolver** ticker ↔ empresa: `python -m lukai ficha TICKER` (falla si no reporta a la SEC → fuera de alcance).
    Confirmar 1 sola vez si es ambiguo.
-2. **Generar plantilla**: `python scripts/build_rubrica.py --company "<Nombre> (<TICKER>)" --out <ruta>.xlsx`
-   (usa `--blank` para empezar en limpio; opcional `--years "FY2022,...,NTM 2026E"`).
-3. **Traer cuantitativo** (income, balance, cash-flow + TTM por suma de trimestres + estimaciones NTM +
-   precios de cierre fiscal). Con yfinance basta `financials/balance_sheet/cashflow`, sus variantes
-   `quarterly_*`, `info` y `history`. Verificar contra SEC EDGAR solo lo material/dudoso. Mapeo exacto
-   en `reference/DATA_MAP.md`. **Ajusta por splits** (ver Lecciones): EPS, acciones y precios históricos
-   deben quedar en la MISMA base que el dato actual.
+2. **Precio, histórico y estimaciones** por el conector Alpha Vantage, una llamada por endpoint:
+   `GLOBAL_QUOTE`, `TIME_SERIES_MONTHLY_ADJUSTED` (guardar solo `fecha,adjusted close` de ~60 meses en
+   `analisis/<T>/historico.csv`), `INCOME_STATEMENT` (archivo para la verificación cruzada de la ficha) y
+   `EARNINGS_ESTIMATES` (NTM: ver la lección de NVDA sobre años fiscales). Si un endpoint no responde,
+   respaldo: yfinance (`earnings_estimate`, `revenue_estimate`) marcado como no oficial.
+3. **Generar y llenar el libro de una vez:**
+   `python -m lukai rubrica <T> --precio <p> --historico analisis/<T>/historico.csv --ingresos-ntm <USD> --eps-ntm <x> --etiqueta-ntm "<FY E, fuente>" --peers <C1>,<C2> --precios-peers <C1>=<p>,<C2>=<p>`
+   Llama a `build_rubrica.py --blank` y `fill_rubrica.py`, llena `Datos!B4:G23` (años reales, TTM, NTM),
+   `Comparables` (filas 6–12, 14 y 15 de los peers) y devuelve `brechas` y `resultados` (si hay LibreOffice).
+   Revisa las notas de la columna H (accession por fila).
 4. **Deuda, leases y FCF — ajustes obligatorios:**
    - **Deuda (fila 16) = SOLO deuda financiera.** Meter leases como deuda distorsiona DN/EBITDA, EV/EBITDA y
      el relato de "caja neta" (clave en restaurantes/retail).
@@ -53,12 +61,12 @@ marca claramente lo que es estimación vs. dato reportado. Nunca inventes cifras
 5. **Identificar 2 competidores** + derivar promedio/mediana del sector. Reusa el MISMO código (loop de tickers).
 6. **Análisis cualitativo (1/3/5)**: leer 10-K Item 1 y 1A, DEF 14A (insiders) y un máximo de ~5 búsquedas
    web acotadas (moat, tendencia secular, disrupción). Justificar cada puntaje en la columna de notas.
-7. **Rellenar** todo con un único JSON: `python scripts/fill_rubrica.py <ruta>.xlsx valores.json --no-recalc`
-   (sin LibreOffice, usa `--no-recalc`). **El JSON DEBE incluir `Datos!B4:G4`** con los años fiscales reales
-   cargados (4 históricos + TTM + NTM): los encabezados son dinámicos, no los dejes con los placeholders.
-8. **Leer de vuelta SOLO** las celdas de resultado (ver `DATA_MAP.md` → "Salida que leer"): clasificación,
-   bandera de momentum, veredicto de precio, ancla normalizada, bandera de discrepancia, rango y brechas.
-   Como no hay recálculo automático, **replica las fórmulas clave en Python** para reportar números exactos.
+7. **Completar** con un único JSON lo que aporta el análisis: `Cualitativo!F6:F18` + notas `G`, textos
+   `B29/B31/B33/B35`, la bandera contable K5 si aplica, `Comparables!C5:E5` y `C13:E13` (forward citados), y el
+   FCF ajustado (`Datos!B14:G14`) solo si citas el ajuste. Luego:
+   `python -m lukai completar <ruta>.xlsx <json>` → escribe y devuelve los `resultados`.
+8. **Leer de vuelta SOLO** los `resultados` (clasificación, puntaje, momentum, foso, valor justo conservador,
+   discrepancia, rango de compra). Sin LibreOffice, el comando avisa: replica en Python solo esas fórmulas.
 9. **Presentar** al usuario: clasificación + confianza (momentum), puntaje, veredicto presente/futuro,
    conclusión de precio CONSERVADORA + rango de compra, 3 riesgos clave y las brechas de datos. Adjuntar el .xlsx.
 
@@ -75,6 +83,9 @@ marca claramente lo que es estimación vs. dato reportado. Nunca inventes cifras
 ## Archivos de la skill
 - `scripts/build_rubrica.py` — genera el libro (8 hojas, gráficos, formato).
 - `scripts/fill_rubrica.py` — escribe celdas desde JSON `{Hoja:{Celda:valor}}` y recalcula.
+- `lukai/rubrica.py` (repo) — puente EDGAR → libro: `python -m lukai rubrica` y `python -m lukai completar`.
+- `reference/learnings.md` — lecciones acumuladas: añade máx. 3 líneas por análisis.
+- Salida: `analisis/<TICKER>/<fecha>-rubrica.xlsx` + el informe `analisis/<TICKER>/<fecha>.md`.
 - `reference/DATA_MAP.md` — qué traer y en qué celda exacta va (Datos / Comparables / Cualitativo).
 - `reference/RUBRICA.md` — criterios, umbrales, pesos y reglas de clasificación.
 
@@ -87,11 +98,11 @@ evalúa a él, no a la empresa. Recuerda al cierre que esto no es asesoría fina
 Destiladas de ejecuciones reales para gastar menos tokens SIN perder calidad.
 
 **Entorno (hechos, no suposiciones):**
-- **No hay clave de FMP ni LibreOffice.** Fuente primaria = **yfinance** (`pip install yfinance openpyxl requests`
-  si falta). Recálculo = **Excel al abrir**; reporta números calculándolos en Python con `fill ... --no-recalc`.
+- **Fuente primaria = SEC EDGAR vía `python -m lukai`** (`pip install -r requirements.txt`). Sin clave de FMP.
+  Con LibreOffice, `lukai rubrica/completar` leen los resultados recalculados; sin él, Excel recalcula al abrir.
 - Terminal en Windows: para imprimir acentos/símbolos usa `PYTHONIOENCODING=utf-8` (evita `UnicodeEncodeError`).
 
-**Receta de datos que YA funcionó (yfinance) — hazla en 2–3 llamadas, no más:**
+**Receta de RESPALDO con yfinance (solo si EDGAR/Alpha Vantage no cubren algo; marcar "no oficial"):**
 - **Históricos (4 FY):** `t.financials`, `t.balance_sheet`, `t.cashflow` (columnas = cierres fiscales).
 - **TTM limpio:** suma de los **4 últimos trimestres** de `t.quarterly_financials` / `t.quarterly_cashflow`
   para flujos (revenue, EBIT, EBITDA, net income, OCF, capex); balance = **último trimestre** (`quarterly_balance_sheet`).

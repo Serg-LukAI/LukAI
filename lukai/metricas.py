@@ -78,7 +78,12 @@ def anuales(series: dict, tasa_impuesto_defecto: float = 0.21) -> list[dict]:
             deuda = 0.0
         caja = (g("caja") or 0) + (g("inversiones_cp") or 0)
         patrimonio = g("patrimonio")
-        capital_invertido = None if patrimonio is None or deuda is None else patrimonio + deuda - caja
+        arrend = g("arrendamientos")
+        if arrend is None and (g("arrendamientos_no_corriente") is not None or g("arrendamientos_corriente") is not None):
+            arrend = (g("arrendamientos_no_corriente") or 0) + (g("arrendamientos_corriente") or 0)
+        # Capital invertido = deuda financiera + patrimonio − caja + arrendamientos operativos (definición de la skill).
+        capital_invertido = (None if patrimonio is None or deuda is None
+                             else patrimonio + deuda - caja + (arrend or 0))
         fcf = None
         if g("flujo_operativo") is not None:
             fcf = g("flujo_operativo") - abs(g("capex") or 0)
@@ -89,6 +94,8 @@ def anuales(series: dict, tasa_impuesto_defecto: float = 0.21) -> list[dict]:
             "ingresos": ingresos, "utilidad_bruta": bruta, "ebit": ebit, "utilidad_neta": g("utilidad_neta"),
             "eps": g("eps_diluido"), "fcf": fcf, "ebitda": ebitda, "deuda": deuda, "caja": caja,
             "deuda_neta": deuda_neta, "patrimonio": patrimonio, "activos": g("activos"),
+            "arrendamientos": arrend, "dya": g("dya"), "flujo_operativo": g("flujo_operativo"),
+            "capex": None if g("capex") is None else abs(g("capex")), "tasa_impuesto": tasa,
             "acciones": g("acciones_diluidas"),
             "margen_bruto": _div(bruta, ingresos), "margen_operativo": _div(ebit, ingresos),
             "margen_fcf": _div(fcf, ingresos),

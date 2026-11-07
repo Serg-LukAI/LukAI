@@ -45,6 +45,8 @@ las alucinaciones. Prioriza veracidad y respaldo sobre velocidad. Responde siemp
     Para agregar un ticker: insertar una fila debajo del último ticker (no sobrescribir notas) y copiar las
     fórmulas G–K de la fila de arriba cambiando el número de fila.
   - **Plan**: reglas y checklist (solo lectura).
+- Skill de análisis: `.claude/skills/lukai-equity-analyst/` (libro Excel Quality & Compounding; método del
+  equity-analyst). Sus datos cuantitativos los llena `python -m lukai rubrica` desde EDGAR.
 - Rúbrica: `rubrica/Rubrica_Quality_Compounding_2026.md`. Umbrales: `config/criterios.yaml`. Universo: `config/universo.yaml`.
 - Plantilla de valoración en Sheets: `Rubrica_Quality_Compounding` (id `16sbQ_UAGSsJVy01ieZhEmusd09RFupM5ZrPnW6Xz8dM`).
 - Ideas: `ideas.md`. Bitácora de decisiones: `diario/decisiones.md`. Análisis: `analisis/<TICKER>/`.
@@ -71,6 +73,8 @@ Uso eficiente del cupo de Alpha Vantage (25 llamadas/día gratis):
 ```bash
 python -m lukai screen [--top 10] [--sin-precios] [--solo T1,T2]
 python -m lukai ficha TICKER --cartera <valor total USD> [--precio P --fecha-precio F] [--historico archivo] [--av-income archivo] [--fx X --adr N] [--fcf USD]
+python -m lukai rubrica TICKER --precio P --historico csv --ingresos-ntm USD --eps-ntm X --peers C1,C2 [--precios-peers C1=p,C2=p]
+python -m lukai completar analisis/T/<fecha>-rubrica.xlsx cualitativo.json   # escribe lo del agente y lee resultados
 python -m lukai semaforo --precio P --entrada E --justo J --cartera <USD>
 python -m lukai macro       # tasa 10 años y S&P 500 (FRED)
 python -m lukai llamadas    # requests hechos hoy por fuente

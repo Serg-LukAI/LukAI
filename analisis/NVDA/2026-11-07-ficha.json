@@ -21,17 +21,22 @@
    "deuda_neta": -4598000000,
    "patrimonio": 16893000000,
    "activos": 28791000000,
+   "arrendamientos": 755000000,
+   "dya": 1098000000,
+   "flujo_operativo": 5822000000,
+   "capex": null,
+   "tasa_impuesto": 0.017464277613971423,
    "acciones": 25100000000.0,
    "margen_bruto": 0.623448275862069,
    "margen_operativo": 0.271784107946027,
    "margen_fcf": 0.34914542728635684,
    "nopat": 4452851893.853481,
-   "capital_invertido": 12295000000,
+   "capital_invertido": 13050000000,
    "deuda_neta_ebitda": -0.816696269982238,
    "roe": 0.2564375776949032,
    "roa": 0.1504636865687194,
    "ajuste_split": 10.0,
-   "roic": 0.36216770181809527
+   "roic": 0.3412147045098453
   },
   {
    "cierre": "2022-01-30",
@@ -47,17 +52,22 @@
    "deuda_neta": -10262000000,
    "patrimonio": 26612000000,
    "activos": 44187000000,
+   "arrendamientos": 885000000,
+   "dya": 1174000000,
+   "flujo_operativo": 9108000000,
+   "capex": 976000000,
+   "tasa_impuesto": 0.019012171813700834,
    "acciones": 25350000000.0,
    "margen_bruto": 0.6492903321691313,
    "margen_operativo": 0.3730772088875678,
    "margen_fcf": 0.3021475811845136,
    "nopat": 9850098782.81863,
-   "capital_invertido": 16350000000,
+   "capital_invertido": 17235000000,
    "deuda_neta_ebitda": -0.9150245207311636,
    "roe": 0.3664512250112731,
    "roa": 0.22069839545567702,
    "ajuste_split": 10.0,
-   "roic": 0.6877359946111803
+   "roic": 0.6504935633362147
   },
   {
    "cierre": "2023-01-29",
@@ -73,16 +83,21 @@
    "deuda_neta": -2343000000,
    "patrimonio": 22101000000,
    "activos": 41182000000,
+   "arrendamientos": 1078000000,
+   "dya": 1544000000,
+   "flujo_operativo": 5641000000,
+   "capex": 1833000000,
+   "tasa_impuesto": 0.21,
    "acciones": 25070000000,
    "margen_bruto": 0.5692889449099132,
    "margen_operativo": 0.1565952398606065,
    "margen_fcf": 0.14117298138948617,
    "nopat": 3336960000.0,
-   "capital_invertido": 19758000000,
+   "capital_invertido": 20836000000,
    "deuda_neta_ebitda": -0.40620665742024964,
    "roe": 0.19763811592235644,
    "roa": 0.10606575688407557,
-   "roic": 0.18483217015619807
+   "roic": 0.17530193585668882
   },
   {
    "cierre": "2024-01-28",
@@ -98,16 +113,21 @@
    "deuda_neta": -16275000000,
    "patrimonio": 42978000000,
    "activos": 65728000000,
+   "arrendamientos": 1347000000,
+   "dya": 1508000000,
+   "flujo_operativo": 28090000000,
+   "capex": 1069000000,
+   "tasa_impuesto": 0.1199952687917677,
    "acciones": 24940000000,
    "margen_bruto": 0.7271757329043695,
    "margen_operativo": 0.5412166376678376,
    "margen_fcf": 0.4435343554052723,
    "nopat": 29015515997.397835,
-   "capital_invertido": 26703000000,
+   "capital_invertido": 28050000000,
    "deuda_neta_ebitda": -0.4720127610208817,
    "roe": 0.6924472986178976,
    "roa": 0.4527750730282376,
-   "roic": 1.2490267535093018
+   "roic": 1.1870685266701237
   },
   {
    "cierre": "2025-01-26",
@@ -123,16 +143,21 @@
    "deuda_neta": -34747000000,
    "patrimonio": 79327000000,
    "activos": 111601000000,
+   "arrendamientos": 1807000000,
+   "dya": 1864000000,
+   "flujo_operativo": 64089000000,
+   "capex": 3236000000,
+   "tasa_impuesto": 0.13264941803727417,
    "acciones": 24804000000,
    "margen_bruto": 0.7498869705816992,
    "margen_operativo": 0.6241752683969747,
    "margen_fcf": 0.46631723334636044,
    "nopat": 70648306952.60991,
-   "capital_invertido": 44580000000,
+   "capital_invertido": 46387000000,
    "deuda_neta_ebitda": -0.4170457409652292,
    "roe": 0.9187288060811577,
    "roa": 0.6530407433625147,
-   "roic": 1.9821923025857473
+   "roic": 1.8982040370409852
   },
   {
    "cierre": "2026-01-25",
@@ -148,16 +173,21 @@
    "deuda_neta": -2137000000,
    "patrimonio": 157293000000,
    "activos": 206803000000,
+   "arrendamientos": 2944000000,
+   "dya": 2843000000,
+   "flujo_operativo": 102718000000,
+   "capex": 6042000000,
+   "tasa_impuesto": 0.1511700247437257,
    "acciones": 24514000000,
    "margen_bruto": 0.7106808435754708,
    "margen_operativo": 0.6038168363141272,
    "margen_fcf": 0.44770258129648327,
    "nopat": 110676393983.73982,
-   "capital_invertido": 155156000000,
+   "capital_invertido": 158100000000,
    "deuda_neta_ebitda": -0.016039930946483524,
    "roe": 0.7633333969089534,
    "roa": 0.5805863551302447,
-   "roic": 1.1082267992123584
+   "roic": 1.0824785339287077
   }
  ],
  "resumen": {
@@ -168,9 +198,9 @@
   "cagr_ingresos_3a": 1.0004509499443963,
   "cagr_eps": 0.9517760987840762,
   "cagr_eps_3a": 2.0660722620765335,
-  "roic_mediana": 0.8979813969117694,
-  "roic_ultimo": 1.1082267992123584,
-  "roic_minimo": 0.18483217015619807,
+  "roic_mediana": 0.8664860486324613,
+  "roic_ultimo": 1.0824785339287077,
+  "roic_minimo": 0.17530193585668882,
   "margen_bruto_ultimo": 0.7106808435754708,
   "margen_bruto_cambio": 0.08723256771340182,
   "margen_operativo_ultimo": 0.6038168363141272,
@@ -823,6 +853,102 @@
     "accn": "0001045810-25-000023",
     "forma": "10-K",
     "etiqueta": "us-gaap:CommercialPaper"
+   }
+  },
+  "arrendamientos": {
+   "2021-01-31": {
+    "accn": "0001045810-21-000010",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiability"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiability"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiability"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiability"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiability"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiability"
+   }
+  },
+  "arrendamientos_no_corriente": {
+   "2021-01-31": {
+    "accn": "0001045810-22-000036",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityNoncurrent"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityNoncurrent"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityNoncurrent"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityNoncurrent"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityNoncurrent"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityNoncurrent"
+   }
+  },
+  "arrendamientos_corriente": {
+   "2021-01-31": {
+    "accn": "0001045810-21-000010",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityCurrent"
+   },
+   "2022-01-30": {
+    "accn": "0001045810-23-000017",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityCurrent"
+   },
+   "2023-01-29": {
+    "accn": "0001045810-24-000029",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityCurrent"
+   },
+   "2024-01-28": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityCurrent"
+   },
+   "2025-01-26": {
+    "accn": "0001045810-25-000023",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityCurrent"
+   },
+   "2026-01-25": {
+    "accn": "0001045810-26-000021",
+    "forma": "10-K",
+    "etiqueta": "us-gaap:OperatingLeaseLiabilityCurrent"
    }
   }
  },

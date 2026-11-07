@@ -45,6 +45,8 @@ def companyfacts_sintetico():
         "LongTermDebt": {"units": {"USD": [_hecho(None, e, 20e6) for _, e in anios]}},
         "CashAndCashEquivalentsAtCarryingValue": {"units": {"USD": [_hecho(None, e, 30e6) for _, e in anios]}},
         "DepreciationDepletionAndAmortization": {"units": {"USD": [_hecho(s, e, 5e6) for s, e in anios]}},
+        "OperatingLeaseLiability": {"units": {"USD": [_hecho(None, e, 40e6) for _, e in anios] + [
+            _hecho(None, "2025-06-30", 45e6, form="10-Q", accn="q2-2025")]}},
     }
     return {"facts": {"us-gaap": gaap}}
 
@@ -90,6 +92,37 @@ class TestEdgarYMetricas(unittest.TestCase):
         r = metricas.resumen(filas)
         self.assertIn("utilidad neta", r["eps_fuente"])
         self.assertAlmostEqual(r["cagr_eps"], 0.20, places=3)
+
+
+    def test_roic_incluye_arrendamientos(self):
+        f = self.filas[-1]
+        self.assertEqual(f["arrendamientos"], 40e6)
+        # capital invertido = patrimonio + deuda − caja + arrendamientos = 150 + 20 − 30 + 40
+        self.assertAlmostEqual(f["capital_invertido"], 180e6)
+        self.assertEqual(f["deuda"], 20e6)  # los arrendamientos NO son deuda financiera
+
+    def test_ultimo_saldo_trimestral(self):
+        s = edgar.ultimo_saldo(companyfacts_sintetico(), "arrendamientos")
+        self.assertEqual((s["valor"], s["hasta"]), (45e6, "2025-06-30"))
+
+
+class TestPuenteRubrica(unittest.TestCase):
+    def test_valores_datos_desde_edgar(self):
+        from lukai import rubrica
+        with mock.patch.object(edgar, "cik_de", return_value=1), \
+             mock.patch.object(edgar, "hechos", return_value=companyfacts_sintetico()):
+            v, brechas = rubrica.valores_datos("XYZ", 50.0, 0.1, {"2024-12-31": 40.0}, None)
+        d = v["Datos"]
+        self.assertEqual([d["B4"], d["E4"], d["F4"]], ["FY2021", "FY2024", "TTM 2025-06-30"])
+        self.assertEqual(d["E5"], 207.4)            # millones
+        self.assertEqual(d["F5"], 227.4)            # TTM = FY + YTD − YTD previo
+        self.assertEqual(d["E21"], 40.0)            # arrendamientos fuera de la deuda (fila 21)
+        self.assertEqual(d["F21"], 45.0)            # saldo del último trimestre
+        self.assertEqual(d["E16"], 20.0)
+        self.assertEqual(d["E20"], 40.0)            # precio de cierre fiscal
+        self.assertEqual(d["B23"], 50.0)
+        self.assertIn("accn", d["H5"])
+        self.assertTrue(any("NTM" in b for b in brechas))
 
 
 class TestValuacion(unittest.TestCase):

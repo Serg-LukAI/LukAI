@@ -284,7 +284,7 @@ for name, f, fmt, vals in comp_rows:
     put(cp, f"A{r}", name, BOLD, GREYF, align="left")
     put(cp, f"B{r}", f, GREEN, None, fmt, "right")
     for j, v in enumerate(vals):
-        put(cp, f"{get_column_letter(3+j)}{r}", v, BLUE, YEL, fmt, "right")
+        put(cp, f"{get_column_letter(3+j)}{r}", (None if ARGS.blank else v), BLUE, YEL, fmt, "right")
     put(cp, f"F{r}", "", NOTE, align="left")
     r += 1
 # rows 5..15
@@ -343,7 +343,7 @@ def qual_row(row, crit, q, a1, a3, a5, default):
     put(cu, f"C{row}", a1, BLACK, None, align="left", wrap=True)
     put(cu, f"D{row}", a3, BLACK, None, align="left", wrap=True)
     put(cu, f"E{row}", a5, BLACK, None, align="left", wrap=True)
-    put(cu, f"F{row}", default, BLUE, YEL, '0', "center")
+    put(cu, f"F{row}", (None if ARGS.blank else default), BLUE, YEL, '0', "center")
     dv_135.add(cu[f"F{row}"])
     put(cu, f"G{row}", "", BLACK, None, align="left", wrap=True)
     cu.row_dimensions[row].height = 78
