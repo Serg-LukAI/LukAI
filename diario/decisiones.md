@@ -36,4 +36,22 @@ Plantilla:
 
 ---
 
+## 2026-11-07 · NVDA · No compra (re-análisis con la skill corregida)
+- Precio del día: 186.64 USD (Alpha Vantage, 06/11/2026) · S&P 500: sin dato en este análisis
+- Veredicto / puntaje: Calidad en Observación (87.7/100) · Entrada: 150.39 · Valor justo: 176.93 · Semáforo: ROJO
+- Cambio frente al 06/11: antes, Compounder de Convicción 97.8 / 178.11 / 209.54. Aquel libro dejaba los cualitativos en 5/5 por
+  defecto; además, ahora la deuda y la caja salen del 10-Q (caja neta 23,220 M) y el EPS se ajusta por "Other income".
+- Por qué (palabras de Sergio): 1) Nvidia es el actor dominante en el mercado de GPUs y software utilizados para modelos de IA.
+  2) Tiene ventajas demostradas en desarrollo y todos los hiperescaladores tienen fuertes relaciones con el fabricante.
+- Qué tendría que pasar para estar equivocado: margen bruto < 73.5% o guía Q4 débil el 17/11; inventario y cuentas por
+  cobrar creciendo más que los ingresos; recorte de capex de los hiperescaladores (repetir FY23: EPS −56%, margen 57%).
+- Revisar el: 18/11/2026 (reporte Q3 FY27) y 30/11/2026 (decisión del tramo 1)
+- Informe: analisis/NVDA/2026-11-07.md
+### Revisión
+- 3 meses:
+- 6 meses:
+- 12 meses:
+
+---
+
 ## Lecciones
