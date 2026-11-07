@@ -1,0 +1,7 @@
+# Lecciones acumuladas (LukAI)
+Una línea por lección: `- AAAA-MM-DD [TICKER] lección`. Máx. 3 líneas por análisis; sin duplicar lo ya escrito en SKILL.md ("Lecciones de ejecución"). Mantener corto: se lee en cada análisis.
+
+- 2026-11-06 [NVDA] Las lineas "EBIT"/"EBITDA" anuales de yfinance incluyen ganancias NO operativas de inversiones; usa Operating Income (+D&A) para EBIT/EBITDA fila 7-8 o el ROIC/EV se distorsiona.
+- 2026-11-06 [NVDA] yfinance info["forwardEps"] suele ser el estimado +1y (2 anos fuera), no NTM; usa t.earnings_estimate filas 0y/+1y y mezcla conservador. "Diluted EPS" puede venir 0.0 -> calcula NI/acciones.
+- 2026-11-06 [NVDA] TTM de acciones: NO sumes los 4 trimestres de "Diluted Average Shares" (da ~4x); usa el nivel del ultimo trimestre.
+
