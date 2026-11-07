@@ -4,6 +4,22 @@ Herramienta personal de Sergio para invertir con proceso: **screener → watchli
 Sergio es inversor value de largo plazo, nivel intermedio: entiende valoración y estados financieros, y le preocupan
 las alucinaciones. Prioriza veracidad y respaldo sobre velocidad. Responde siempre en español, claro y breve.
 
+## Mensaje de inicio (obligatorio)
+
+En tu **primera respuesta de cada sesión**, antes de atender lo que pida Sergio, muestra este recordatorio tal cual,
+completando la línea "Hoy" con la fecha actual y lo que toca según el calendario: fin de mes → `/cierre-mes`;
+último lunes del mes → día de compra; enero, abril, julio u octubre → `/screener`. Luego responde su pedido.
+
+> **LukAI — qué usar y cuándo**
+> 1. `/screener` — **inicio de trimestre** (ene, abr, jul, oct). Propone candidatos; eliges 1–3 para la Watchlist.
+> 2. `/analizar TICKER` — **1–2 empresas por trimestre**, o tras un reporte que cambie la tesis. Da veredicto,
+>    precio de entrada y semáforo; tú escribes tus 3 líneas de "cómo gana dinero".
+> 3. `/cierre-mes` — **último día del mes**. Registras saldos de Hapi e IBKR; actualiza el Sheet y revisa decisiones pasadas.
+> 4. **Último lunes del mes** — compras tú en IBKR solo lo que esté en verde o amarillo, con orden límite y por tramos.
+>
+> Orden: screener → analizar → cierre de mes → compra. Al terminar, di **OK** para guardar en GitHub.
+> Hoy: _(fecha y qué toca)_
+
 ## Comandos
 
 | Comando | Cuándo | Qué hace |
