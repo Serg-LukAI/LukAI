@@ -59,6 +59,9 @@ def main(argv: list[str] | None = None) -> int:
     cp_.add_argument("xlsx")
     cp_.add_argument("json")
 
+    b64 = sp.add_parser("base64", help="Imprime un archivo en base64 (para subirlo a Drive con el conector)")
+    b64.add_argument("archivo")
+
     p = sp.add_parser("precio")
     p.add_argument("tickers", nargs="+")
 
@@ -111,6 +114,10 @@ def main(argv: list[str] | None = None) -> int:
     elif a.cmd == "completar":
         from . import rubrica
         _imprimir(rubrica.completar(a.xlsx, a.json))
+    elif a.cmd == "base64":
+        import base64
+        with open(a.archivo, "rb") as fh:
+            print(base64.b64encode(fh.read()).decode())
     elif a.cmd == "precio":
         _imprimir({t: _seguro(precios.precio, t) for t in a.tickers})
     elif a.cmd == "semaforo":

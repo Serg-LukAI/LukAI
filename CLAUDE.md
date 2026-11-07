@@ -26,6 +26,18 @@ las alucinaciones. Prioriza veracidad y respaldo sobre velocidad. Responde siemp
 5. **Escrituras al Sheet:** mostrar primero la propuesta exacta (pestaña, rango, valores) y escribir solo tras un
    "OK" explícito. Nunca escribir en celdas con fórmula ni en las pestañas Resumen o Plan.
 
+## Guardado (obligatorio al final de cada comando)
+
+En sesiones en la nube (celular o web) el contenedor es temporal: **nada queda guardado sin commit y push**.
+Al terminar `/screener`, `/analizar` o `/cierre-mes`:
+1. Muestra `git status --short` (archivos nuevos o cambiados: `analisis/`, `diario/`, `data/screens/`, `ideas.md`,
+   `.claude/skills/lukai-equity-analyst/reference/learnings.md`).
+2. Con el OK de Sergio: `git pull --rebase` → commit con un mensaje corto (p. ej. `Análisis NVDA 2026-11-30`) →
+   `git push` a la rama por defecto del repositorio (hoy `claude/stock-screener-watchlist-fov7zo`).
+3. Si el push falla por conflicto, resuélvelo conservando ambas entradas del diario; nunca uses `--force`.
+
+En el computador de Sergio aplica lo mismo, para que el celular vea el historial.
+
 ## Recursos
 
 - Sheet de seguimiento: `Seguimiento inversiones — Sergio`, id `1Cr2R7BfCRsJ6NO0JVd84XCLoFM0SSVbNkdNcMuAvaiY`
@@ -50,6 +62,8 @@ las alucinaciones. Prioriza veracidad y respaldo sobre velocidad. Responde siemp
 - Rúbrica: `rubrica/Rubrica_Quality_Compounding_2026.md`. Umbrales: `config/criterios.yaml`. Universo: `config/universo.yaml`.
 - Plantilla de valoración en Sheets: `Rubrica_Quality_Compounding` (id `16sbQ_UAGSsJVy01ieZhEmusd09RFupM5ZrPnW6Xz8dM`).
 - Ideas: `ideas.md`. Bitácora de decisiones: `diario/decisiones.md`. Análisis: `analisis/<TICKER>/`.
+- Copias de los libros en Drive (opcional, paso 11 de `/analizar`): carpeta `LukAI/Análisis/<TICKER>`, un archivo
+  por análisis convertido a Google Sheet. La plantilla `Rubrica_Quality_Compounding` de Drive nunca se modifica.
 
 ## Datos: fuentes y rutas alternas
 

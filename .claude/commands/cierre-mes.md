@@ -18,5 +18,6 @@ Cierre del mes en el Sheet de seguimiento. Datos que dio Sergio (pueden venir va
    Termina con **3 lecciones** en una línea cada una, agrega esas lecciones al final del diario y muéstralas.
 4. **Fin de trimestre** (marzo, junio, septiembre, diciembre): recuerda la revisión trimestral (rebalancear si un
    bloque se desvía más de 5 pp; cambiar reglas solo por escrito) y correr `/screener`.
-5. Resumen final en 5 líneas como máximo: valor total, retorno del mes vs S&P 500, desvíos de asignación más
+5. **Guardar en GitHub** el diario con las revisiones y lecciones (ver "Guardado" en CLAUDE.md).
+6. Resumen final en 5 líneas como máximo: valor total, retorno del mes vs S&P 500, desvíos de asignación más
    grandes (pestaña Resumen), semáforos y próximo paso.

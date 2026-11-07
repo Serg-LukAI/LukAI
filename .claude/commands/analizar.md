@@ -52,3 +52,13 @@ Analiza a fondo **$ARGUMENTS** con la rúbrica Quality & Compounding (skill `luk
    fila debajo del último ticker. Escribe solo tras el OK.
 10. Guarda el informe en `analisis/$ARGUMENTS/<fecha>.md` y agrega la decisión a `diario/decisiones.md` con su
     plantilla (precio del día y fecha de revisión = próximo reporte).
+11. **Copia en Drive (opcional; pregúntalo).** Avísale a Sergio que subirla cuesta muchos tokens (el conector
+    exige el archivo en base64, ~40 KB). Si dice que sí:
+    - busca la carpeta `LukAI` → `Análisis` → `<TICKER>` con `search_files` (`mimeType = 'application/vnd.google-apps.folder'`)
+      y créala si no existe (`create_file` con ese mimeType y `parentId`);
+    - obtén el contenido con `python -m lukai base64 analisis/$ARGUMENTS/<fecha>-rubrica.xlsx` y súbelo con
+      `create_file` (`title` = `<TICKER> rúbrica <fecha>`, `contentMimeType` =
+      `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`, sin `disableConversionToGoogleType`, para
+      que quede como Google Sheet y recalcule);
+    - anota el enlace en el informe y en la entrada del diario. Nunca sobrescribas la plantilla original de Drive.
+12. **Guardar en GitHub** (ver "Guardado" en CLAUDE.md).

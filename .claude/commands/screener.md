@@ -16,4 +16,5 @@ Corre el screener trimestral de LukAI. Argumentos opcionales: $ARGUMENTS
    Si se pasa de 8 nombres, pregunta cuál sale. **Escribe solo tras su OK.**
 5. Agrega a `diario/decisiones.md` una entrada por ticker elegido (y por los descartados que Sergio quiera
    recordar), con la plantilla del archivo: tipo `Entra a watchlist`, motivo en palabras de Sergio y cifras clave.
-6. Termina con el siguiente paso sugerido: `/analizar <ticker>` para 1–2 de ellos este trimestre.
+6. **Guardar en GitHub** el resultado del screener (`data/screens/`) y el diario (ver "Guardado" en CLAUDE.md).
+7. Termina con el siguiente paso sugerido: `/analizar <ticker>` para 1–2 de ellos este trimestre.
