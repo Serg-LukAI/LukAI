@@ -10,3 +10,6 @@ Una línea por lección: `- AAAA-MM-DD [TICKER] lección`. Máx. 3 líneas por a
 - 2026-11-07 [NVDA] Antes de fiarte del EPS GAAP (ancla P/E), compara "Other income, net" con el resultado antes de impuestos en el 10-Q: en NVDA fue 17% en 1S FY27 (ganancias no realizadas de participaciones). Va en K5 como "vigilar" y refuerza usar el FCF.
 - 2026-11-07 [SKILL] Forward de peers (Comparables C5/C13): FY en curso de AV EARNINGS_ESTIMATES (aunque haya cerrado sin reportar) sobre la base del último 10-K; documenta FY, base y precio en F13.
 - 2026-11-07 [ENTORNO] nvidianews/investor.nvidia.com dan 403 en el proxy; la fecha de resultados sale con 1 WebSearch del comunicado "Sets Conference Call".
+- 2026-11-10 [META] Con capex en expansión, lee en el 10-Q la nota de compromisos (arrendamientos no iniciados, VIE de data centers con garantías de valor residual) y los 8-K de financiación posteriores al 10-Q (bonos, convertibles, ventas a plazo): cambian K5 y la deuda más que el balance.
+- 2026-11-10 [META] Para forward de peers, usa el mismo FY que el NTM del analizado; si su EPS FY+1 < FY en curso (ganancias no operativas), anota ambos P/E en F13 como "verificar".
+- 2026-11-10 [META] La caída del EPS estimado suele salir de cargos discretos (impuestos, litigios): búscalos en el Ex. 99.1 del 8-K de resultados ("excluding this charge") antes de leer el 10-Q completo.
