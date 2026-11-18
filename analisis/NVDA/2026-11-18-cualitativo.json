@@ -1,0 +1,41 @@
+{
+ "Cualitativo": {
+  "F6": 5,
+  "G6": "Plataforma completa (GPU+CPU Vera+CUDA+redes+sistemas a escala de rack). Margen bruto GAAP 74.8% en Q3 FY27 (75.0% Q2): no es commodity. Fuente: 10-K FY26 Item 1 (0001045810-26-000021); 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088).",
+  "F7": 5,
+  "G7": "Ecosistema CUDA desde 2006 que corre en todas sus GPU + cientos de librerías/SDK: alto coste de cambio. Riesgo: el propio 10-K lista como competidores a AMD, Huawei, Intel y chips propios de Alphabet, Amazon, Microsoft. Fuente: 10-K FY26 Item 1 y 1A (0001045810-26-000021).",
+  "F8": 5,
+  "G8": "Margen bruto GAAP 74.8% Q3 FY27 vs 73.4% Q3 FY26 con ingresos +103% a/a (115.8 B): sube volumen sin ceder margen. Vigilar: guía Q4 71.0-72.0% (sin explicación en el comunicado). Fuente: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088); 10-Q Q2 FY27 (0001045810-26-000075).",
+  "F9": 3,
+  "G9": "Bajado de 5 a 3: el fundador-CEO Jensen Huang renunció como CEO, presidente y consejero el 11/11/2026 (sin motivo divulgado). CEO interina: Colette Kress (CFO desde 2013, profesional, sigue de CFO); el consejo busca CEO permanente (internos y externos); Harvey C. Jones, primer presidente del consejo. Ya no hay dueño-gestor: anclaje 3 hasta conocer al sucesor. Fuente: 8-K Item 5.02 12/11/2026 (accn 0001045810-26-000082) y su Ex. 99.1; participación de Huang 3.58% en DEF 14A 12/05/2026 (0001045810-26-000036).",
+  "F10": 3,
+  "G10": "Pendiente de Sergio: evalúa a Sergio, no a la empresa.",
+  "F14": 3,
+  "G14": "Estable, no claramente creciente: el foso se amplía en sistemas/redes, pero los hiperescaladores diseñan chips propios, Huawei compite en China y los controles de exportación cerraron mercado (cargo H20 4.5 B en Q1 FY26; ~60 M de ingresos H20 con licencia). Fuente: 10-K FY26 Item 1A (0001045810-26-000021). Sin cambio tras Q3: Data Center +110% a/a; guía Q4 sin ingresos de cómputo de Data Center en China (8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088)).",
+  "F15": 5,
+  "G15": "Compromisos de suministro de 279 B al 26/07/2026 (10-Q Q2 FY27 Nota 10, 0001045810-26-000075); capex Q3 FY27 4,422 M (vs 1,637 M Q3 FY26); acuerdo para adquirir Hugging Face. Matiz: en Q3 devolvió 28.1 B (recompras 22,122 M + dividendos 6,026 M) y compró 15,696 M en participaciones; valores no cotizados 65,528 M al 25/10/2026. Fuente: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088).",
+  "F16": 5,
+  "G16": "Cómputo acelerado/IA como tendencia secular; ingresos Q3 FY27 +103% a/a y Data Center 107.6 B (+110% a/a); Edge Computing 8.2 B (+42%). Fuente: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088).",
+  "F17": 3,
+  "G17": "Amenaza presente pero gestionable: chips propios de clientes (Alphabet, Amazon, Microsoft), controles de exportación cambiantes y concentración (3 clientes directos 16/15/13% en 1S FY27). NVIDIA lidera el cambio, por eso no es 1. Fuente: 10-K FY26 Item 1A; 10-Q Q2 FY27 Nota 7. Nuevo: riesgo de persona clave por la salida del fundador-CEO (8-K 12/11/2026, 0001045810-26-000082); se mantiene 3 porque la hoja de ruta (Vera Rubin) se envió según el comunicado de Q3.",
+  "F18": 3,
+  "G18": "Hay extensiones reales (CPU Vera, redes, Edge +42% a/a, Hugging Face, automotriz), pero con un reverse DCF que ya descuenta FCF +16.2%/año (ficha 2026-11-18) es dudoso que el mercado no las esté pagando. Fuente: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088); analisis/NVDA/2026-11-18-ficha.json.",
+  "B29": "Tesis de Sergio (07/11/2026): 1) Nvidia es el actor dominante en el mercado de GPUs y software utilizados para modelos de IA. 2) Tiene ventajas demostradas en desarrollo y todos los hiperescaladores tienen fuertes relaciones con el fabricante.",
+  "B31": "1) Concentración y ciclo de capex: 3 clientes directos = 16%, 15% y 13% de ingresos en 1S FY27 y 5 clientes = 70% de cuentas por cobrar (10-Q Q2 FY27); cuentas por cobrar 81,033 M al 25/10/2026 (+28.5% t/t vs ingresos +20%; ~64 días de venta vs ~60 en Q2). 2) Compromisos fijos y margen: 366 B de compromisos futuros (279 B de suministro) al 26/07/2026; inventario 39,724 M (+25.8% t/t); guía de margen bruto Q4 71-72% (vs 74.8% en Q3). 3) Sucesión y financiación de clientes: el fundador-CEO renunció el 11/11/2026 sin motivo divulgado y hay CEO interina (8-K 0001045810-26-000082); participaciones en desarrolladores de IA (valores no cotizados 65,528 M y cotizados 44,219 M al 25/10/2026), garantías a OpenAI y plazos de pago de hasta 1 año. Además: controles de exportación a China (guía Q4 sin cómputo DC de China) y chips propios de los clientes (10-K FY26 1A). Fuente cifras Q3: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088).",
+  "B33": "Vender (tesis rota) si: a) margen bruto trimestral < 70% dos trimestres seguidos sin cargo puntual que lo explique; b) ingresos de Data Center caen a/a; c) un hiperescalador top declara que migra la mayoría de su entrenamiento/inferencia a chips propios; d) cuentas por cobrar o inventario crecen claramente más rápido que los ingresos dos trimestres más (en Q3 FY27: CxC +28.5% e inventario +25.8% t/t vs ingresos +20%), o crecen los cargos por compromisos de compra; e) la otra renta (ganancias de inversiones) pasa a sostener el crecimiento del EPS; f) el nuevo CEO permanente cambia la hoja de ruta o la asignación de capital, o se conoce un motivo de la renuncia de Huang que afecte la tesis. O por las reglas del Plan: posición > 8% o mejor alternativa.",
+  "B35": "10-Q de Q3 FY27 (pendiente en EDGAR): concentración de clientes, compromisos de suministro y participaciones. Nombramiento del CEO permanente (búsqueda abierta, 8-K 12/11/2026). Reporte Q4 FY27 (fecha sin dato): guía 130.0 B ±3% con una semana adicional y margen 71-72%. Opciones: rampa de Vera Rubin NVL72 y CPU Vera, redes, Edge/RTX Spark, cierre de la compra de Hugging Face, posibles licencias de exportación a China. Recompras: 227.3 B de autorización restante; dividendo 0.25 USD/trimestre (pago 23/12/2026). Fuente: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088). Estimado FY2028E de Alpha Vantage: EPS 15.91 e ingresos 692,206 M (EARNINGS_ESTIMATES, consultado 2026-11-07)."
+ },
+ "Rúbrica": {
+  "D10": "NO",
+  "F10": "NO (vigilar). Non-GAAP de NVIDIA desde Q1 FY27 ya incluye la compensación en acciones; en Q3 FY27 EPS GAAP 2.70 vs non-GAAP 2.68 (excluye ganancias de participaciones 1,767 M). Otros ingresos: 1,497 M = 1.9% del resultado antes de impuestos en Q3, pero 25,636 M = 11.6% en 9M FY27 (ganancias de participaciones 25,474 M). Capital de trabajo: CxC 81,033 M (+28.5% t/t) e inventario 39,724 M (+25.8% t/t) vs ingresos +20% t/t. FCF Q3 43,777 M (OCF 48,253 M) sí es operativo. Financiación a clientes (participaciones no cotizadas 65,528 M, garantías a OpenAI, plazos hasta 1 año). Deuda: tasa fija (3.3-5.7%); en Q3 repagó 1,000 M (vencimiento 2026); vencimientos 4,750 M 2028, 3,500 M 2029. Fuente: 8-K 17/11/2026 Ex. 99.1 (accn 0001045810-26-000088); 10-Q Q2 FY27 (0001045810-26-000075) Notas 7, 9 y 10."
+ },
+ "Comparables": {
+  "C5": 0.472,
+  "D5": 0.6589,
+  "E5": 0.5655,
+  "C13": 58.92,
+  "D13": 25.18,
+  "E13": 42.05,
+  "F13": "Forward = año fiscal en curso de Alpha Vantage EARNINGS_ESTIMATES (07/11/2026): AMD FY2026E (dic-26) EPS 7.6207, ingresos 50,989 M; AVGO FY2026E (oct-26, aún sin reportar) EPS 11.6657, ingresos 105,985 M. Crecimiento sobre el último 10-K (AMD 34,639 M a 27/12/2025; AVGO 63,887 M a 02/11/2025). P/E con precios AV del 06/11/2026 (449.04 y 293.69). Estimados AV posiblemente ajustados (non-GAAP)."
+ }
+}
